@@ -13,7 +13,7 @@ The key idea is simple: **constraints that make local models succeed also make S
 
 ## What you’ll get
 
-- A three-step workflow (`create-plan → plan-to-beads → epic-exec`) that turns “do X” into sequential, verifiable tasks.
+- A three-step workflow (`create-plan → plan-to-beads → exec-epic`) that turns “do X” into sequential, verifiable tasks.
 - A tool strategy that replaces confusing, multi-purpose tools with more robust and secure MCP alternatives.
 - A repo of reusable skills you can use with agents that support skills natively or expose via the MCP server. Most skills are runner-agnostic; `crush-run-delegate` is Crush-specific.
 
@@ -38,7 +38,7 @@ The key idea is simple: **constraints that make local models succeed also make S
 ## TL;DR
 
 ```
-create-plan ➜ plan-to-beads ➜ epic-exec
+create-plan ➜ plan-to-beads ➜ exec-epic
 ```
 
 1. **Create Plan**: produce a structured markdown plan with explicit file paths and acceptance criteria.
