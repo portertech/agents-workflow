@@ -244,6 +244,22 @@ This removes ambiguity about when to retrieve skills. Instead of hoping the mode
 
 ---
 
+## Local Models
+
+The Crush configuration includes several local models that work well with these workflows:
+
+| Model | Context | Notes |
+|-------|---------|-------|
+| [Qwen3 Coder Next (80B-A3B)](https://huggingface.co/Qwen/Qwen3-Coder-Next) | 128K | Latest Qwen coder, Q8_0 quantization |
+| [Qwen3 Coder Flash (30B-A3B)](https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF) | 128K | Smaller and faster, Unsloth BF16 |
+| [GLM 4.7 Flash (30B-A3B)](https://huggingface.co/unsloth/GLM-4.7-Flash-GGUF) | 128K | Reasoning support, Unsloth BF16 |
+| [GLM 4.5 Air (106B-A12B)](https://huggingface.co/unsloth/GLM-4.5-Air-GGUF) | 128K | Reasoning support, Unsloth Q4_K_XL |
+| [Devstral 2 (24B)](https://huggingface.co/unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF) | 200K | Dense, slower but good for long tasks, Unsloth BF16 |
+
+All are served via [LM Studio](https://lmstudio.ai/) with the OpenAI-compatible API, running on an NVIDIA RTX 6000 Pro Workstation Edition (96GB VRAM) for fast prompt processing and token generation.
+
+---
+
 ## Qwen Template
 
 The `qwen/template.jinja` file provides a simple, reliable chat template for Qwen3 Coder models (Flash and Next) in LM Studio.
