@@ -1,4 +1,4 @@
-# Agents
+# Agents Workflow
 
 Patterns and tools for incorporating local models into software development workflows.
 
