@@ -2,7 +2,7 @@
 
 Patterns and tools for incorporating **local models** into software development workflows.
 
-The key idea is simple: **constraints that make local models succeed also make SOTA (state-of-the-art) models faster, cheaper, and easier to audit.**
+The key idea is simple: **constraints that make local models succeed also make SOTA (state-of-the-art) models faster, cheaper, and more reliable.**
 
 ## Who this is for
 
