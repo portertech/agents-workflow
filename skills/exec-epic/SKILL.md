@@ -1,5 +1,5 @@
 ---
-name: epic-exec
+name: exec-epic
 description: Execute beads epic subtasks sequentially using crush run, delegating to a local model by default.
 ---
 

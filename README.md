@@ -61,7 +61,7 @@ If you’re using an MCP-capable coding agent runner (Crush, OpenCode, Claude Co
 
 - Planning: [skills/create-plan/SKILL.md](skills/create-plan/SKILL.md)
 - Beads conversion: [skills/plan-to-beads/SKILL.md](skills/plan-to-beads/SKILL.md)
-- Execution + escalation: [skills/epic-exec/SKILL.md](skills/epic-exec/SKILL.md) and [skills/crush-run-delegate/SKILL.md](skills/crush-run-delegate/SKILL.md)
+- Execution + escalation: [skills/exec-epic/SKILL.md](skills/exec-epic/SKILL.md) and [skills/crush-run-delegate/SKILL.md](skills/crush-run-delegate/SKILL.md)
 
 ---
 
@@ -277,7 +277,7 @@ The `skills/` directory contains reference documents that agents can retrieve du
 |------|---------|
 | [create-plan](skills/create-plan/SKILL.md) | Structured plans optimized for local model execution |
 | [plan-to-beads](skills/plan-to-beads/SKILL.md) | Convert plans to trackable epics with subtasks |
-| [epic-exec](skills/epic-exec/SKILL.md) | Execute subtasks with automatic model escalation |
+| [exec-epic](skills/exec-epic/SKILL.md) | Execute subtasks with automatic model escalation |
 | [using-beads](skills/using-beads/SKILL.md) | Task lifecycle: start, complete, sync, verify |
 | [crush-run-delegate](skills/crush-run-delegate/SKILL.md) | Delegate to models via `crush run` |
 
@@ -365,7 +365,7 @@ To use in LM Studio, set the model's chat template to the contents of `qwen/temp
 └── skills/
     ├── create-plan/SKILL.md
     ├── plan-to-beads/SKILL.md
-    ├── epic-exec/SKILL.md
+    ├── exec-epic/SKILL.md
     ├── using-beads/SKILL.md
     ├── crush-run-delegate/SKILL.md
     ├── effective-go/SKILL.md
@@ -388,6 +388,6 @@ The workflows here remain valuable: they work even better with cloud models, and
 
 ## Next steps
 
-- If you want to adopt the workflow: start with [create-plan](skills/create-plan/SKILL.md) → [plan-to-beads](skills/plan-to-beads/SKILL.md) → [epic-exec](skills/epic-exec/SKILL.md).
+- If you want to adopt the workflow: start with [create-plan](skills/create-plan/SKILL.md) → [plan-to-beads](skills/plan-to-beads/SKILL.md) → [exec-epic](skills/exec-epic/SKILL.md).
 - If you want to customize tool boundaries: review `crush/crush.json` (disabled tools + allowed MCP tools).
 - If you want to improve local tool calling reliability: use `qwen/template.jinja` as the LM Studio chat template for Qwen models.
