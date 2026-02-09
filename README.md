@@ -14,8 +14,8 @@ The key idea is simple: **constraints that make local models succeed also make S
 ## What you’ll get
 
 - A three-step workflow (`create-plan → plan-to-beads → epic-exec`) that turns “do X” into sequential, verifiable tasks.
-- A tool strategy that replaces confusing, multi-purpose tools with simpler MCP alternatives.
-- A repo of reusable skills you can expose as callable tools in MCP-capable agent runners (for example, [Crush](https://github.com/charmcli/crush)). Most skills are runner-agnostic; `crush-run-delegate` is Crush-specific.
+- A tool strategy that replaces confusing, multi-purpose tools with more robust and secure MCP alternatives.
+- A repo of reusable skills you can use with agents that support skills natively or expose via the MCP server. Most skills are runner-agnostic; `crush-run-delegate` is Crush-specific.
 
 ## Table of contents
 
