@@ -37,8 +37,9 @@ The key idea is simple: **constraints that make local models succeed also make S
 
 ## TL;DR
 
-```
-create-plan → plan-to-beads → epic-exec
+```mermaid
+flowchart LR
+    A[create-plan] --> B[plan-to-beads] --> C[epic-exec]
 ```
 
 1. **Create Plan**: produce a structured markdown plan with explicit file paths and acceptance criteria.
