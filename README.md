@@ -130,7 +130,7 @@ The approach here is:
 
 Three MCP servers provide safer, more reliable alternatives.
 
-#### [Filesystem MCP](https://github.com/portertech/filesystem-mcp-server)
+### [Filesystem MCP](https://github.com/portertech/filesystem-mcp-server)
 
 Sandboxed file operations with explicit directory allowlists.
 
@@ -168,7 +168,7 @@ Security measures:
 - **Atomic writes** — file writes use temp file + rename with `O_EXCL` flag to prevent corruption and symlink attacks
 - **Delete protection** — cannot delete allowed root directories
 
-#### [Skills MCP](https://github.com/portertech/skills-mcp-server)
+### [Skills MCP](https://github.com/portertech/skills-mcp-server)
 
 Serves skill documents as retrievable tools.
 
@@ -198,7 +198,7 @@ Benefits:
 - Tool calls are visible in the UI — clearer UX, easier debugging, and better trust/auditability
 - Any agent with an MCP client can use skills — not limited to specific agent runners
 
-#### [LM Studio MCP](https://github.com/portertech/lm-studio-mcp-server)
+### [LM Studio MCP](https://github.com/portertech/lm-studio-mcp-server)
 
 Model management without shell access.
 
