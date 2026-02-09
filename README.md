@@ -123,24 +123,10 @@ Local models struggle with complex, multi-purpose tools. They hallucinate parame
 
 The approach here is:
 
-1. **Disable confusing built-in tools**.
-2. **Replace them with simpler MCP tools** that have hard boundaries (sandboxing / allowlists) and single-purpose interfaces.
+1. **Prefer MCP tools** that have hard boundaries (sandboxing / allowlists) and single-purpose interfaces.
+2. **Disable confusing or unsafe built-in tools** when needed (see `crush/crush.json` for an example).
 
-### Disabled built-in tools
-
-The included [Crush](https://github.com/charmcli/crush) configuration disables several built-in tools:
-
-| Tool | Why disabled |
-|------|--------------|
-| `view` | Replaced by MCP filesystem with explicit allowed directories |
-| `edit` | Local models struggle with find/replace precision |
-| `multiedit` | Too complex — multiple edits compound errors |
-| `write` | Replaced by sandboxed MCP filesystem |
-| `file_path` | Ambiguous interface, replaced by explicit MCP tools |
-
-See `crush/crush.json`.
-
-### MCP replacements
+### MCP servers
 
 Three MCP servers provide safer, more reliable alternatives.
 
