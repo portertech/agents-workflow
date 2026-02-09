@@ -124,7 +124,7 @@ Local models struggle with complex, multi-purpose tools. They hallucinate parame
 The approach here is:
 
 1. **Prefer MCP tools** that have hard boundaries (sandboxing / allowlists) and single-purpose interfaces.
-2. **Disable confusing or unsafe built-in tools** when needed (see `crush/crush.json` for an example).
+2. **Disable confusing or unsafe built-in tools** when needed (see [`crush/crush.json`](crush/crush.json) for an example).
 
 ### MCP servers
 
@@ -159,6 +159,15 @@ Benefits:
 - Separate tools for read vs write operations
 - Simpler interfaces that local models handle reliably
 
+Security measures:
+
+- **Path validation** — all paths validated against allowed directories before any operation
+- **Symlink attack prevention** — symlinks resolved and validated; write/delete operations reject symlinks to prevent TOCTOU attacks
+- **Null byte rejection** — paths containing null bytes are rejected (prevents path injection)
+- **Parent traversal prevention** — `..` sequences cannot escape allowed directories
+- **Atomic writes** — file writes use temp file + rename with `O_EXCL` flag to prevent corruption and symlink attacks
+- **Delete protection** — cannot delete allowed root directories
+
 #### [Skills MCP](https://github.com/portertech/skills-mcp-server)
 
 Serves skill documents as retrievable tools.
@@ -187,6 +196,7 @@ Benefits:
 - Each skill becomes a callable tool
 - Agents retrieve instructions on-demand
 - Tool calls are visible in the UI — clearer UX, easier debugging, and better trust/auditability
+- Any agent with an MCP client can use skills — not limited to specific agent runners
 
 #### [LM Studio MCP](https://github.com/portertech/lm-studio-mcp-server)
 
