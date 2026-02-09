@@ -1,0 +1,143 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "attribution": {
+    "trailer_style": "none",
+    "generated_with": false
+  },
+  "options": {
+    "disable_metrics": true,
+    "context_paths": [
+      "/Users/portertech/.config/crush/AGENTS.md"
+    ],
+    "disabled_tools": [
+      "view",
+      "edit",
+      "multiedit",
+      "write",
+      "file_path"
+    ]
+  },
+  "permissions": {
+    "allowed_tools": [
+      "mcp_filesystem_read_file",
+      "mcp_filesystem_read_text_file",
+      "mcp_filesystem_read_multiple_files",
+      "mcp_filesystem_list_directory",
+      "mcp_filesystem_list_directory_with_sizes",
+      "mcp_filesystem_search_files",
+      "mcp_filesystem_directory_tree",
+      "mcp_filesystem_get_file_info",
+      "mcp_filesystem_list_allowed_directories",
+      "mcp_skills_github_pr_review",
+      "mcp_skills_git_worktree",
+      "mcp_skills_create_plan",
+      "mcp_skills_using_beads",
+      "mcp_skills_plan_to_beads",
+      "mcp_skills_effective_go",
+      "mcp_skills_otel_mdatagen",
+      "mcp_lmstudio_health_check",
+      "mcp_lmstudio_list_models",
+      "mcp_lmstudio_list_loaded_models",
+      "mcp_lmstudio_get_model_info"
+    ]
+  },
+  "lsp": {
+    "go": {
+      "command": "gopls"
+    }
+  },
+  "providers": {
+    "lmstudio": {
+      "name": "LM Studio",
+      "base_url": "http://lmstudio:1234/v1/",
+      "type": "openai-compat",
+      "models": [
+        {
+          "name": "Qwen3 Coder Next",
+          "id": "qwen/qwen3-coder-next",
+          "context_window": 131072,
+          "default_max_tokens": 65536
+        },
+        {
+          "name": "Qwen3 Coder Flash",
+          "id": "qwen3-coder-30b-a3b-instruct",
+          "context_window": 131072,
+          "default_max_tokens": 65536
+        },
+        {
+          "name": "GLM 4.7 Flash",
+          "id": "glm-4.7-flash",
+          "context_window": 131072,
+          "default_max_tokens": 20000,
+          "can_reason": true,
+          "has_reasoning_efforts": true,
+          "default_reasoning_effort": "high"
+        },
+        {
+          "name": "GLM 4.5 Air",
+          "id": "glm-4.5-air",
+          "context_window": 131072,
+          "default_max_tokens": 20000,
+          "can_reason": true,
+          "has_reasoning_efforts": true,
+          "default_reasoning_effort": "high"
+        },
+        {
+          "name": "Devstral 2 24b",
+          "id": "devstral-small-2-24b-instruct-2512",
+          "context_window": 200000,
+          "default_max_tokens": 20000
+        }
+      ]
+    }
+  },
+  "mcp": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--mount", "type=bind,src=/Users/portertech/projects,dst=/Users/portertech/projects",
+        "--mount", "type=bind,src=/Users/portertech/go,dst=/Users/portertech/go",
+		"--mount", "type=bind,src=/Users/portertech/.config/doom,dst=/Users/portertech/.config/doom",
+        "--mount", "type=bind,src=/Users/portertech/.config/doom,dst=/Users/portertech/.config/emacs",
+        "--mount", "type=bind,src=/Users/portertech/.skills,dst=/Users/portertech/.skills",
+        "portertech/filesystem-mcp-server:latest",
+        "/Users/portertech/projects/",
+        "/Users/portertech/go",
+		"/Users/portertech/.config/doom",
+        "/Users/portertech/.config/emacs",
+        "/Users/portertech/.skills"
+      ],
+      "timeout": 30
+    },
+    "skills": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--mount", "type=bind,src=/Users/portertech/.skills,dst=/skills,readonly",
+        "portertech/skills-mcp-server:latest",
+        "/skills"
+      ],
+      "timeout": 30
+    },
+    "lmstudio": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "LMSTUDIO_HOST=lmstudio",
+        "-e", "LMSTUDIO_PORT=1234",
+        "portertech/lm-studio-mcp-server:latest"
+      ],
+      "timeout": 30
+    }
+  }
+}
