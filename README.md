@@ -385,11 +385,3 @@ Evaluation of this philosophy is ongoing. Experimenting with local models has be
 That said, the hardware required to run local models capable enough for day-to-day professional development can be expensive. Until 30–80B parameter models make another leap in capability, it may not be practical for most developers to invest heavily in local hardware for professional use.
 
 The workflows here remain valuable: they work even better with cloud models, and the constraints improve reliability regardless of model tier.
-
----
-
-## Next steps
-
-- If you want to adopt the workflow: start with [create-plan](skills/create-plan/SKILL.md) → [plan-to-beads](skills/plan-to-beads/SKILL.md) → [exec-epic](skills/exec-epic/SKILL.md).
-- If you want to customize tool boundaries: review `crush/crush.json` (disabled tools + allowed MCP tools).
-- If you want to improve local tool calling reliability: use `qwen/template.jinja` as the LM Studio chat template for Qwen models.
