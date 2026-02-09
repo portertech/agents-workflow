@@ -8,7 +8,7 @@ The key idea is simple: **constraints that make local models succeed also make S
 
 - You want to use local models for coding tasks.
 - You want a repeatable workflow for delegating coding tasks to models (local or cloud).
-- You want *machine-checkable* progress (tests/build/run) instead of “looks good”.
+- You want *machine-verifiable* progress (tests/build/run) instead of “looks good”.
 - You want safer tool use (sandboxed filesystem, explicit boundaries) to reduce agent mistakes.
 
 ## What you’ll get
