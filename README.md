@@ -59,8 +59,6 @@ A typical loop looks like:
 2. **Convert the plan to a beads epic** so each task is trackable and independently executable.
 3. **Execute tasks sequentially** with a default local model, escalating only on failure.
 
-If you’re using an MCP-capable coding agent runner (Crush, OpenCode, Claude Code, etc.), the most relevant references are:
-
 - Planning: [skills/create-plan/SKILL.md](skills/create-plan/SKILL.md)
 - Beads conversion: [skills/plan-to-beads/SKILL.md](skills/plan-to-beads/SKILL.md)
 - Execution + escalation: [skills/exec-epic/SKILL.md](skills/exec-epic/SKILL.md) and [skills/crush-run-delegate/SKILL.md](skills/crush-run-delegate/SKILL.md)
